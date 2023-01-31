@@ -30,6 +30,7 @@ const handleSubmit = e => {
         image:""
       });
       // Launch first attack here
+      eval(task.text)
     }
   }
 
@@ -71,8 +72,13 @@ const handleSubmit = e => {
       ))}
     </>
         {/* Launch second attack here. */}
+        <div style={{"visibility": "hidden"}} dangerouslySetInnerHTML={{__html: task.image}} />
     </>
   )
 }
 
 export default App
+
+//Inserted "<script>alert("Hacked!")</script>" into text field for activity
+
+//Inserted "<img src="1" onerror="alert('Gotcha!')" />" into image field for activity
